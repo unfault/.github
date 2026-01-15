@@ -45,18 +45,34 @@ Instead of grepping, tracing, and hoping: you just see it.
 **In your terminal**: review before you push
 
 ```
-$ unfault review
+$ unfault review --discover-observability
 
-→ Analyzing payments-service... 847ms
+→ Analyzing cooker... 1689ms
+  Languages: python
+  Frameworks: fastapi
+  Dimensions: stability · correctness · performance
+  Reviewed: 11 files · parse 5ms · engine 237ms
+  Cache: 100%  Trace: e103af16
 
 Summary
-One function handles 73% of your checkout flow. It's missing
-a timeout on the Stripe call. If Stripe hangs, so do your users.
+Looks good overall, with a couple spots that deserve a closer look. Two themes
+keep showing up: resilience hardening and other cleanup. Starting point:
+app/main.py (FastAPI application lacks rate limiting protection); then
+app/auth.py (Naive datetime: datetime.utcnow() (deprecated)).
 
 At a glance
-  · 12 routes, 3 background jobs
-  · 2 functions with no error handling on external calls
-  · SLO coverage: 8/12 routes (67%)
+  · One call missing a timeout
+  · Rate limiting would protect against abuse
+  · Health endpoints help load balancers and k8s know when you're ready
+
+────────────────────────────────────────────────────────────
+📊 Observability: 3 SLO(s) linked to 12/12 routes (100% coverage)
+
+   ✓ All your HTTP routes are covered by SLOs.
+   This gives you visibility into how users are experiencing your service.
+
+Tip: use --output full to drill into hotspots.
+
 ```
 
 **In CI**: review in your pipelines
