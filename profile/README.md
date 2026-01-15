@@ -20,11 +20,11 @@ Unfault answers that question before you find out the hard way.
 
 When you're editing `process_payment()`, you probably want to know:
 
-- 🔗 **Who calls this?** — 3 routes, 2 background jobs
-- 🎯 **What SLOs are watching?** — 99.9% availability on `/checkout`  
-- ⚠️ **What's missing?** — No timeout on the external API call
+- 🔗 **Who calls this?**: 3 routes, 2 functions
+- 🎯 **What SLOs are related to your route?**: 99.9% availability on `/checkout`  
+- ⚠️ **What's missing?**: No timeout on the external API call
 
-Instead of grepping, tracing, and hoping — you just see it.
+Instead of grepping, tracing, and hoping: you just see it.
 
 <p align="center">
   <img src="https://unfault.dev/screenshots/sidebar-context.png" alt="Context sidebar showing callers and routes" width="600">
@@ -34,7 +34,7 @@ Instead of grepping, tracing, and hoping — you just see it.
 
 ## It Works Where You Work
 
-**In VS Code** — context follows your cursor
+**In VS Code**: context follows your cursor
 
 <p align="center">
   <img src="https://unfault.dev/screenshots/codelens-hint.png" alt="CodeLens showing function impact" width="500">
@@ -42,7 +42,7 @@ Instead of grepping, tracing, and hoping — you just see it.
   <em>Compact hints above functions show what matters</em>
 </p>
 
-**In your terminal** — review before you push
+**In your terminal**: review before you push
 
 ```
 $ unfault review
@@ -59,7 +59,7 @@ At a glance
   · SLO coverage: 8/12 routes (67%)
 ```
 
-**In CI** — review in your pipelines
+**In CI**: review in your pipelines
 
 <p align="center">
   <img src="https://unfault.dev/screenshots/ci-output.png" alt="CI output showing analysis results" width="500">
@@ -69,36 +69,21 @@ At a glance
 
 ## What's Here
 
-| Repository | What it does |
-|------------|--------------|
-| **[cli](https://github.com/unfault/cli)** | The brain — analysis, CI integration, LSP server |
-| **[core](https://github.com/unfault/core)** | Parsing and graph building (open source) |
-| **[vscode](https://github.com/unfault/vscode)** | VS Code extension (open source) |
-
-## Get Started in 60 Seconds
-
-```bash
-# Install
-curl -fsSL https://unfault.dev/install.sh | sh
-
-# Login
-unfault login
-
-# See what you've got
-unfault review
-```
-
-Or grab the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=unfault.unfault) and context appears as you code.
+| Repository | What it does | License |
+|------------|--------------|---------|
+| **[cli](https://github.com/unfault/cli)** | The brain: analysis, CI integration, LSP server | MIT |
+| **[core](https://github.com/unfault/core)** | Parsing and graph building | MIT |
+| **[vscode](https://github.com/unfault/vscode)** | VS Code extension | MIT |
 
 ## Supports Your Stack
 
 Python · Go · Rust · TypeScript · JavaScript
 
-FastAPI · Flask · Django · Express · Gin — with framework-aware route detection.
+FastAPI · Flask · Django · Express · Gin: with framework-aware route detection.
 
 ## Your Code Stays With You
 
-Source code never leaves your machine. We receive a semantic graph — imports, calls, relationships — not your actual code. [Privacy details →](https://unfault.dev/privacy)
+Source code never leaves your machine. We receive a semantic graph: imports, calls, relationships: not your actual code. [Privacy details →](https://unfault.dev/privacy)
 
 ---
 
