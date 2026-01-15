@@ -26,62 +26,39 @@ When you're editing `process_payment()`, you probably want to know:
 
 Instead of grepping, tracing, and hoping: you just see it.
 
-<p align="center">
-  <img src="https://unfault.dev/screenshots/sidebar-context.png" alt="Context sidebar showing callers and routes" width="600">
-  <br>
-  <em>Context appears in the sidebar as you navigate your code</em>
-</p>
-
 ## It Works Where You Work
 
 **In VS Code**: context follows your cursor
 
 <p align="center">
-  <img src="https://unfault.dev/screenshots/codelens-hint.png" alt="CodeLens showing function impact" width="500">
+  <img src="../public/codelens.png" alt="CodeLens showing function impact" width="500">
   <br>
   <em>Compact hints above functions show what matters</em>
 </p>
 
+<p align="center">
+  <img src="../public/sidebar.png" alt="Impact shown in the sidebar" width="500">
+  <br>
+  <em>Get context as you navigate your code</em>
+</p>
+
 **In your terminal**: review before you push
 
-```
-$ unfault review --discover-observability
+<p align="center">
+  <img src="../public/review.png" alt="Review your code from the terminal" width="500">
+  <br>
+  <em>Runs in no time, flags what is worth looking</em>
+</p>
 
-→ Analyzing cooker... 1689ms
-  Languages: python
-  Frameworks: fastapi
-  Dimensions: stability · correctness · performance
-  Reviewed: 11 files · parse 5ms · engine 237ms
-  Cache: 100%  Trace: e103af16
-
-Summary
-Looks good overall, with a couple spots that deserve a closer look. Two themes
-keep showing up: resilience hardening and other cleanup. Starting point:
-app/main.py (FastAPI application lacks rate limiting protection); then
-app/auth.py (Naive datetime: datetime.utcnow() (deprecated)).
-
-At a glance
-  · One call missing a timeout
-  · Rate limiting would protect against abuse
-  · Health endpoints help load balancers and k8s know when you're ready
-
-────────────────────────────────────────────────────────────
-📊 Observability: 3 SLO(s) linked to 12/12 routes (100% coverage)
-
-   ✓ All your HTTP routes are covered by SLOs.
-   This gives you visibility into how users are experiencing your service.
-
-Tip: use --output full to drill into hotspots.
-
-```
-
-**In CI**: review in your pipelines
 
 <p align="center">
-  <img src="https://unfault.dev/screenshots/ci-output.png" alt="CI output showing analysis results" width="500">
+  <img src="../public/ask.png" alt="Ask about your code" width="500">
   <br>
-  <em>Runs in seconds, flags what changed</em>
+  <em>Ask natural questions about your code</em>
 </p>
+
+
+Use this context with your favourite AI too.
 
 ## What's Here
 
