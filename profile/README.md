@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/unfault/vscode/main/icons/svg/unfault-logo.svg" alt="Unfault" width="200">
 </p>
 
-<h3 align="center">Cognitive context for the code you ship</h3>
+<h3 align="center">Cognitive context for the code you work on everyday.</h3>
 
 <p align="center">
   <a href="https://unfault.dev/docs">Documentation</a> •
@@ -59,7 +59,7 @@ At a glance
   · SLO coverage: 8/12 routes (67%)
 ```
 
-**In CI** — catch surprises before they ship
+**In CI** — review in your pipelines
 
 <p align="center">
   <img src="https://unfault.dev/screenshots/ci-output.png" alt="CI output showing analysis results" width="500">
@@ -103,7 +103,7 @@ Source code never leaves your machine. We receive a semantic graph — imports, 
 ---
 
 <p align="center">
-  <b>Ship with fewer surprises.</b>
+  <b>Write with greater insights.</b>
   <br><br>
   <a href="https://unfault.dev/docs/installation">Get Started →</a>
 </p>
